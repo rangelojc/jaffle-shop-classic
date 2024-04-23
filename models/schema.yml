@@ -1,38 +1,42 @@
-version: 2
-
 models:
-  - name: DIMCURRENCY
-    description:
-
-    columns:
-      - name: CURRENCYKEY
-        tests:
-          - unique
-          - not_null
-
-      - name: CURRENCYALTERNATEKEY
-        description:
-
-      - name: CURRENCYNAME
-        description:
-
-  - name: DIMSALESTERRITORY
-    description:
-
-    columns:
-      - name: SALESTERRITORYKEY
-        tests:
-          - unique
-          - not_null
-
-      - name: SALESTERRITORYALTERNATEKEY
-        description:
-
-      - name: SALESTERRITORYGROUP
-        description:
-
-      - name: SALESTERRITORYREGION
-        description:
-
-      - name: SALESTERRITORYCOUNTRY
-        description:
+- columns:
+  - description: A numeric identifier uniquely identifying each currency within the
+      table.
+    name: CURRENCYKEY
+    tests:
+    - unique
+    - not_null
+  - description: An alternate key or code representing the currency, often aligned
+      with international currency codes for easy reference.
+    name: CURRENCYALTERNATEKEY
+  - description: The full name of the currency, providing clear identification for
+      reporting and transaction purposes.
+    name: CURRENCYNAME
+  description: Stores information about various currencies used in transactions, including
+    their names and unique identifiers, to support financial operations and reporting
+    across different currencies!!
+  name: DIMCURRENCY
+- columns:
+  - description: A unique identifier for each sales territory, crucial for linking
+      sales data and ensuring data integrity.
+    name: SALESTERRITORYKEY
+    tests:
+    - unique
+    - not_null
+  - description: Serves as an alternative identifier for the sales territory, often
+      used for integration with external systems or legacy data.
+    name: SALESTERRITORYALTERNATEKEY
+  - description: Groups sales territories into larger segments, facilitating strategic
+      analysis and planning across multiple territories.
+    name: SALESTERRITORYGROUP
+  - description: Defines the region within the sales territory, allowing for more
+      granular analysis of sales performance and market trends.
+    name: SALESTERRITORYREGION
+  - description: Specifies the country of the sales territory, providing geographical
+      context for sales analysis.
+    name: SALESTERRITORYCOUNTRY
+  description: Organizes sales territories into a structured format, enabling analysis
+    and reporting on sales performance, regional market trends, and strategic planning
+    for market penetration!!!
+  name: DIMSALESTERRITORY
+version: 2
